@@ -1,0 +1,21 @@
+# ser.flushInput()
+# ser.flushOutput()
+print(len(control_string))
+
+while count < len(control_string):
+
+    # check that the port is open and ready
+    if ser.isOpen():
+        print(ser.name + ' is now open...')
+
+        print ('current character number is ' + control_string[count])
+        print ('current counter value = '), count
+
+        # Write one character to the Buffer of COM2
+        ser.write(control_string[count])
+
+        # update the counter
+        count += 1
+
+# After the last character was sent close the port
+ser.close()
